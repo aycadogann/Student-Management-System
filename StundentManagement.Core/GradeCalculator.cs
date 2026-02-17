@@ -9,19 +9,17 @@ namespace StundentManagement.Core
     public class GradeCalculator
     {
         private const double vizeEtkisi= 0.4;
-        private const double finalEtkisi= 0.4;
+        private const double finalEtkisi= 0.6;
 
         public static double OrtalamaHesapla(double vize, double final)
         {
-            return (vizeEtkisi*vizeEtkisi)+(final * finalEtkisi);
+            return (vize*vizeEtkisi)+(final * finalEtkisi);
         }
 
-        public string HarfNotuGetir(double ortalama)
+        public static string HarfNotuGetir(double ortalama)
         {
             if (ortalama >= 90) return "AA";
             if (ortalama >= 85) return "BA";
-            if (ortalama >= 80) return "BB";
-            if (ortalama >= 80) return "BB";
             if (ortalama >= 80) return "BB";
             if (ortalama >= 75) return "CB";
             if (ortalama >= 70) return "CC";
