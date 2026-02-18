@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StundentManagement.Core", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagement.ConsoleUI", "StudentManagement.ConsoleUI\StudentManagement.ConsoleUI.csproj", "{49B6A9F7-4C71-4743-BF4E-4F5867173DEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagement.WinFormUI", "StudentManagement.WinFormUI\StudentManagement.WinFormUI.csproj", "{FEAA5C67-7209-448B-8547-ACCF5E74DAC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{49B6A9F7-4C71-4743-BF4E-4F5867173DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49B6A9F7-4C71-4743-BF4E-4F5867173DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49B6A9F7-4C71-4743-BF4E-4F5867173DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEAA5C67-7209-448B-8547-ACCF5E74DAC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEAA5C67-7209-448B-8547-ACCF5E74DAC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEAA5C67-7209-448B-8547-ACCF5E74DAC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEAA5C67-7209-448B-8547-ACCF5E74DAC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
