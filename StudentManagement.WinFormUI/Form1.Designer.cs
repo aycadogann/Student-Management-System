@@ -35,7 +35,7 @@ namespace StudentManagement.WinFormUI
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_Name = new System.Windows.Forms.TextBox();
+            this.txt_FirstName = new System.Windows.Forms.TextBox();
             this.txt_LastName = new System.Windows.Forms.TextBox();
             this.num_MidTerm = new System.Windows.Forms.NumericUpDown();
             this.num_Final = new System.Windows.Forms.NumericUpDown();
@@ -43,11 +43,11 @@ namespace StudentManagement.WinFormUI
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgw_List = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.lbl_Avarege = new System.Windows.Forms.Label();
+            this.lbl_Average = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_LetterGrade = new System.Windows.Forms.Label();
             this.lbl_Status = new System.Windows.Forms.Label();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FisrtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Avarege = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LetterGrate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,7 +64,7 @@ namespace StudentManagement.WinFormUI
             this.groupBox1.Controls.Add(this.num_Final);
             this.groupBox1.Controls.Add(this.num_MidTerm);
             this.groupBox1.Controls.Add(this.txt_LastName);
-            this.groupBox1.Controls.Add(this.txt_Name);
+            this.groupBox1.Controls.Add(this.txt_FirstName);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -116,13 +116,13 @@ namespace StudentManagement.WinFormUI
             this.label4.TabIndex = 3;
             this.label4.Text = "Final Notu:";
             // 
-            // txt_Name
+            // txt_FirstName
             // 
-            this.txt_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_Name.Location = new System.Drawing.Point(122, 31);
-            this.txt_Name.Name = "txt_Name";
-            this.txt_Name.Size = new System.Drawing.Size(189, 26);
-            this.txt_Name.TabIndex = 0;
+            this.txt_FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_FirstName.Location = new System.Drawing.Point(122, 31);
+            this.txt_FirstName.Name = "txt_FirstName";
+            this.txt_FirstName.Size = new System.Drawing.Size(189, 26);
+            this.txt_FirstName.TabIndex = 0;
             // 
             // txt_LastName
             // 
@@ -157,13 +157,14 @@ namespace StudentManagement.WinFormUI
             this.btn_Calculate.TabIndex = 4;
             this.btn_Calculate.Text = "Hesapla";
             this.btn_Calculate.UseVisualStyleBackColor = true;
+            this.btn_Calculate.Click += new System.EventHandler(this.btn_Calculate_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lbl_Status);
             this.groupBox2.Controls.Add(this.lbl_LetterGrade);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.lbl_Avarege);
+            this.groupBox2.Controls.Add(this.lbl_Average);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(382, 13);
             this.groupBox2.Name = "groupBox2";
@@ -177,7 +178,7 @@ namespace StudentManagement.WinFormUI
             this.dgw_List.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgw_List.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgw_List.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name,
+            this.FisrtName,
             this.LastName,
             this.Avarege,
             this.LetterGrate});
@@ -198,14 +199,14 @@ namespace StudentManagement.WinFormUI
             this.label5.TabIndex = 0;
             this.label5.Text = "Ortalama:";
             // 
-            // lbl_Avarege
+            // lbl_Average
             // 
-            this.lbl_Avarege.AutoSize = true;
-            this.lbl_Avarege.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_Avarege.Location = new System.Drawing.Point(139, 61);
-            this.lbl_Avarege.Name = "lbl_Avarege";
-            this.lbl_Avarege.Size = new System.Drawing.Size(0, 29);
-            this.lbl_Avarege.TabIndex = 1;
+            this.lbl_Average.AutoSize = true;
+            this.lbl_Average.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_Average.Location = new System.Drawing.Point(139, 61);
+            this.lbl_Average.Name = "lbl_Average";
+            this.lbl_Average.Size = new System.Drawing.Size(0, 29);
+            this.lbl_Average.TabIndex = 1;
             // 
             // label7
             // 
@@ -235,11 +236,11 @@ namespace StudentManagement.WinFormUI
             this.lbl_Status.Size = new System.Drawing.Size(0, 20);
             this.lbl_Status.TabIndex = 4;
             // 
-            // Name
+            // FisrtName
             // 
-            this.Name.HeaderText = "Ad";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
+            this.FisrtName.HeaderText = "Ad";
+            this.FisrtName.MinimumWidth = 6;
+            this.FisrtName.Name = "FisrtName";
             // 
             // LastName
             // 
@@ -289,7 +290,7 @@ namespace StudentManagement.WinFormUI
         private System.Windows.Forms.NumericUpDown num_Final;
         private System.Windows.Forms.NumericUpDown num_MidTerm;
         private System.Windows.Forms.TextBox txt_LastName;
-        private System.Windows.Forms.TextBox txt_Name;
+        private System.Windows.Forms.TextBox txt_FirstName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -298,10 +299,10 @@ namespace StudentManagement.WinFormUI
         private System.Windows.Forms.Label lbl_Status;
         private System.Windows.Forms.Label lbl_LetterGrade;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lbl_Avarege;
+        private System.Windows.Forms.Label lbl_Average;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgw_List;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FisrtName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Avarege;
         private System.Windows.Forms.DataGridViewTextBoxColumn LetterGrate;

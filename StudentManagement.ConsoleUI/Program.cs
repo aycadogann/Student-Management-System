@@ -27,10 +27,10 @@ namespace StudentManagement.ConsoleUI
             double finalGrade =double.Parse(Console.ReadLine());
 
 
-            double avarage = GradeCalculator.OrtalamaHesapla(midTermGrade, finalGrade);
-            string letterGrade = GradeCalculator.HarfNotuGetir(avarage);
+            double average = GradeCalculator.OrtalamaHesapla(midTermGrade, finalGrade);
+            string letterGrade = GradeCalculator.HarfNotuGetir(average);
 
-            Console.WriteLine("Ortalama: {0}",avarage);
+            Console.WriteLine("Ortalama: {0}",average);
             Console.WriteLine("Harf Notu: {0}",letterGrade);
 
 

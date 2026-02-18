@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StundentManagement.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,37 @@ namespace StudentManagement.WinFormUI
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btn_Calculate_Click(object sender, EventArgs e)
+        {
+            Student student = new Student();
+            student.FirstName = txt_FirstName.Text;
+            student.LastName = txt_LastName.Text;
+            student.MidTermGrade = Convert.ToDouble(num_MidTerm.Value);
+            student.FinalGrade = Convert.ToDouble(num_Final.Value);
+            double average = GradeCalculator.OrtalamaHesapla(student.MidTermGrade, student.FinalGrade);
+            string letterGrade = GradeCalculator.HarfNotuGetir(average);
+            bool status = GradeCalculator.GectiMi(average);
+
+            lbl_Average.Text = average.ToString();
+            lbl_LetterGrade.Text = letterGrade.ToString();
+            if (status)
+            {
+                lbl_Status.Text = "Geçti";
+                lbl_Status.ForeColor = Color.Green;
+            }
+            else
+            {
+                lbl_Status.Text = "Kaldı";
+                lbl_Status.ForeColor = Color.Red;
+            }
+            dgw_List.Rows.Add(student.FirstName, student.LastName, average, letterGrade);
+            txt_FirstName.Clear();
+            txt_LastName.Clear();
+            num_MidTerm.Value = 0;
+            num_Final.Value = 0;
+            txt_FirstName.Focus();
         }
     }
 }

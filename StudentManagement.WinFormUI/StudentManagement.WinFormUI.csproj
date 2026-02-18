@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StundentManagement.Core\StundentManagement.Core.csproj">
+      <Project>{0990f092-c6f9-451a-af22-be058fdec444}</Project>
+      <Name>StundentManagement.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
